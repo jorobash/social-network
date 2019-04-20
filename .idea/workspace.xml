@@ -70,9 +70,30 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2285714">
-              <caret line="3" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-9.6">
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+              <folding>
+                <marker date="1555755052546" expanded="true" signature="206:396" placeholder="SELECT posts..users..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Post.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/Post.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14609286">
+              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+              <folding>
+                <marker date="1555758343464" expanded="true" signature="379:440" placeholder="INSERT INTO posts..." />
+                <marker date="1555758343464" expanded="true" signature="700:777" placeholder="SELECT user_..posts_likes..." />
+                <marker date="1555758343464" expanded="true" signature="864:913" placeholder="UPDATE posts..." />
+                <marker date="1555758343464" expanded="true" signature="973:1027" placeholder="INSERT INTO posts_likes..." />
+                <marker date="1555758343464" expanded="true" signature="1132:1181" placeholder="UPDATE posts..." />
+                <marker date="1555758343464" expanded="true" signature="1241:1311" placeholder="DELETE FROM ..." />
+                <marker date="1555758343464" expanded="true" signature="1524:1584" placeholder="SELECT * FRO..posts..." />
+                <marker date="1555758343464" expanded="true" signature="1708:1785" placeholder="SELECT post_..posts_likes..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,44 +157,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66451615">
-              <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
+            <state vertical-scroll-proportion="-1.4857143">
+              <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
               <folding>
-                <marker date="1555751850931" expanded="true" signature="269:322" placeholder="SELECT usern..users..." />
-                <marker date="1555751850931" expanded="true" signature="400:453" placeholder="SELECT usern..users..." />
-                <marker date="1555751850931" expanded="true" signature="542:589" placeholder="SELECT id FR..users..." />
-                <marker date="1555751850931" expanded="true" signature="674:727" placeholder="SELECT verif..users..." />
-                <marker date="1555751850931" expanded="true" signature="954:1012" placeholder="SELECT follo..followers..." />
-                <marker date="1555751850931" expanded="true" signature="954:1042" placeholder="SELECT follo..followers..." />
-                <marker date="1555751850931" expanded="true" signature="1195:1243" placeholder="UPDATE users..." />
-                <marker date="1555751850931" expanded="true" signature="1337:1367" placeholder="INSERT INTO followers..." />
-                <marker date="1555751850931" expanded="true" signature="1337:1369" placeholder="INSERT INTO followers..." />
-                <marker date="1555751850931" expanded="true" signature="1337:1382" placeholder="INSERT INTO followers..." />
-                <marker date="1555751850931" expanded="true" signature="1337:1395" placeholder="INSERT INTO followers..." />
-                <marker date="1555751850931" expanded="true" signature="1817:1875" placeholder="SELECT follo..followers..." />
-                <marker date="1555751850931" expanded="true" signature="1817:1905" placeholder="SELECT follo..followers..." />
-                <marker date="1555751850931" expanded="true" signature="1817:2046" placeholder="SELECT follo..followers..." />
-                <marker date="1555751850931" expanded="true" signature="2047:2095" placeholder="UPDATE users..." />
-                <marker date="1555751850931" expanded="true" signature="2185:2261" placeholder="DELETE FROM ..." />
-                <marker date="1555751850931" expanded="true" signature="2196:2207" placeholder="INSERT INTO followers..." />
-                <marker date="1555751850931" expanded="true" signature="2436:2494" placeholder="SELECT follo..followers..." />
-                <marker date="1555751850931" expanded="true" signature="2436:2524" placeholder="SELECT follo..followers..." />
-                <marker date="1555751850931" expanded="true" signature="3010:3071" placeholder="INSERT INTO posts..." />
-                <marker date="1555751850931" expanded="true" signature="3293:3312" placeholder="SELECT user_..." />
-                <marker date="1555751850931" expanded="true" signature="3293:3324" placeholder="SELECT user_..posts_likes..." />
-                <marker date="1555751850931" expanded="true" signature="3293:3370" placeholder="SELECT user_..posts_likes..." />
-                <marker date="1555751850931" expanded="true" signature="3465:3514" placeholder="UPDATE posts..." />
-                <marker date="1555751850931" expanded="true" signature="3582:3636" placeholder="INSERT INTO posts_likes..." />
-                <marker date="1555751850931" expanded="true" signature="3827:3840" placeholder="SELECT * FRO..." />
-                <marker date="1555751850931" expanded="true" signature="3827:3846" placeholder="SELECT * FRO..posts..." />
-                <marker date="1555751850931" expanded="true" signature="3827:3853" placeholder="SELECT * FRO..posts..." />
-                <marker date="1555751850931" expanded="true" signature="3827:3862" placeholder="SELECT * FRO..posts..." />
-                <marker date="1555751850931" expanded="true" signature="3827:3870" placeholder="SELECT * FRO..posts..." />
-                <marker date="1555751850931" expanded="true" signature="3827:3879" placeholder="SELECT * FRO..posts..." />
-                <marker date="1555751850931" expanded="true" signature="3827:3887" placeholder="SELECT * FRO..posts..." />
+                <marker date="1555758234737" expanded="true" signature="300:353" placeholder="SELECT usern..users..." />
+                <marker date="1555758234737" expanded="true" signature="431:484" placeholder="SELECT usern..users..." />
+                <marker date="1555758234737" expanded="true" signature="573:620" placeholder="SELECT id FR..users..." />
+                <marker date="1555758234737" expanded="true" signature="705:758" placeholder="SELECT verif..users..." />
+                <marker date="1555758234737" expanded="true" signature="985:1043" placeholder="SELECT follo..followers..." />
+                <marker date="1555758234737" expanded="true" signature="985:1073" placeholder="SELECT follo..followers..." />
+                <marker date="1555758234737" expanded="true" signature="1226:1274" placeholder="UPDATE users..." />
+                <marker date="1555758234737" expanded="true" signature="1368:1398" placeholder="INSERT INTO followers..." />
+                <marker date="1555758234737" expanded="true" signature="1368:1400" placeholder="INSERT INTO followers..." />
+                <marker date="1555758234737" expanded="true" signature="1368:1413" placeholder="INSERT INTO followers..." />
+                <marker date="1555758234737" expanded="true" signature="1368:1426" placeholder="INSERT INTO followers..." />
+                <marker date="1555758234737" expanded="true" signature="1848:1906" placeholder="SELECT follo..followers..." />
+                <marker date="1555758234737" expanded="true" signature="1848:1936" placeholder="SELECT follo..followers..." />
+                <marker date="1555758234737" expanded="true" signature="1848:2077" placeholder="SELECT follo..followers..." />
+                <marker date="1555758234737" expanded="true" signature="2078:2126" placeholder="UPDATE users..." />
+                <marker date="1555758234737" expanded="true" signature="2216:2292" placeholder="DELETE FROM ..." />
+                <marker date="1555758234737" expanded="true" signature="2227:2238" placeholder="INSERT INTO followers..." />
+                <marker date="1555758234737" expanded="true" signature="2467:2525" placeholder="SELECT follo..followers..." />
+                <marker date="1555758234737" expanded="true" signature="2467:2555" placeholder="SELECT follo..followers..." />
               </folding>
             </state>
           </provider>
@@ -187,12 +195,13 @@
         <option value="$PROJECT_DIR$/classes/DB.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/classes/Login.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/forgot-password.php" />
         <option value="$PROJECT_DIR$/change-password.php" />
         <option value="$PROJECT_DIR$/create-account.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/profile.php" />
+        <option value="$PROJECT_DIR$/classes/Post.php" />
       </list>
     </option>
   </component>
@@ -206,10 +215,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-37" />
-    <option name="y" value="37" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="483" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -317,11 +326,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-37" y="37" width="1936" height="483" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13697916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13697916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -372,14 +381,6 @@
             <marker date="1555657732285" expanded="true" signature="241:289" placeholder="DELETE FROM ..." />
             <marker date="1555657732285" expanded="true" signature="417:460" placeholder="DELETE FROM ..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2285714">
-          <caret line="3" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -454,43 +455,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.6">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <marker date="1555755052546" expanded="true" signature="206:396" placeholder="SELECT posts..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66451615">
-          <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
+        <state vertical-scroll-proportion="-1.4857143">
+          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
           <folding>
-            <marker date="1555751850931" expanded="true" signature="269:322" placeholder="SELECT usern..users..." />
-            <marker date="1555751850931" expanded="true" signature="400:453" placeholder="SELECT usern..users..." />
-            <marker date="1555751850931" expanded="true" signature="542:589" placeholder="SELECT id FR..users..." />
-            <marker date="1555751850931" expanded="true" signature="674:727" placeholder="SELECT verif..users..." />
-            <marker date="1555751850931" expanded="true" signature="954:1012" placeholder="SELECT follo..followers..." />
-            <marker date="1555751850931" expanded="true" signature="954:1042" placeholder="SELECT follo..followers..." />
-            <marker date="1555751850931" expanded="true" signature="1195:1243" placeholder="UPDATE users..." />
-            <marker date="1555751850931" expanded="true" signature="1337:1367" placeholder="INSERT INTO followers..." />
-            <marker date="1555751850931" expanded="true" signature="1337:1369" placeholder="INSERT INTO followers..." />
-            <marker date="1555751850931" expanded="true" signature="1337:1382" placeholder="INSERT INTO followers..." />
-            <marker date="1555751850931" expanded="true" signature="1337:1395" placeholder="INSERT INTO followers..." />
-            <marker date="1555751850931" expanded="true" signature="1817:1875" placeholder="SELECT follo..followers..." />
-            <marker date="1555751850931" expanded="true" signature="1817:1905" placeholder="SELECT follo..followers..." />
-            <marker date="1555751850931" expanded="true" signature="1817:2046" placeholder="SELECT follo..followers..." />
-            <marker date="1555751850931" expanded="true" signature="2047:2095" placeholder="UPDATE users..." />
-            <marker date="1555751850931" expanded="true" signature="2185:2261" placeholder="DELETE FROM ..." />
-            <marker date="1555751850931" expanded="true" signature="2196:2207" placeholder="INSERT INTO followers..." />
-            <marker date="1555751850931" expanded="true" signature="2436:2494" placeholder="SELECT follo..followers..." />
-            <marker date="1555751850931" expanded="true" signature="2436:2524" placeholder="SELECT follo..followers..." />
-            <marker date="1555751850931" expanded="true" signature="3010:3071" placeholder="INSERT INTO posts..." />
-            <marker date="1555751850931" expanded="true" signature="3293:3312" placeholder="SELECT user_..." />
-            <marker date="1555751850931" expanded="true" signature="3293:3324" placeholder="SELECT user_..posts_likes..." />
-            <marker date="1555751850931" expanded="true" signature="3293:3370" placeholder="SELECT user_..posts_likes..." />
-            <marker date="1555751850931" expanded="true" signature="3465:3514" placeholder="UPDATE posts..." />
-            <marker date="1555751850931" expanded="true" signature="3582:3636" placeholder="INSERT INTO posts_likes..." />
-            <marker date="1555751850931" expanded="true" signature="3827:3840" placeholder="SELECT * FRO..." />
-            <marker date="1555751850931" expanded="true" signature="3827:3846" placeholder="SELECT * FRO..posts..." />
-            <marker date="1555751850931" expanded="true" signature="3827:3853" placeholder="SELECT * FRO..posts..." />
-            <marker date="1555751850931" expanded="true" signature="3827:3862" placeholder="SELECT * FRO..posts..." />
-            <marker date="1555751850931" expanded="true" signature="3827:3870" placeholder="SELECT * FRO..posts..." />
-            <marker date="1555751850931" expanded="true" signature="3827:3879" placeholder="SELECT * FRO..posts..." />
-            <marker date="1555751850931" expanded="true" signature="3827:3887" placeholder="SELECT * FRO..posts..." />
+            <marker date="1555758234737" expanded="true" signature="300:353" placeholder="SELECT usern..users..." />
+            <marker date="1555758234737" expanded="true" signature="431:484" placeholder="SELECT usern..users..." />
+            <marker date="1555758234737" expanded="true" signature="573:620" placeholder="SELECT id FR..users..." />
+            <marker date="1555758234737" expanded="true" signature="705:758" placeholder="SELECT verif..users..." />
+            <marker date="1555758234737" expanded="true" signature="985:1043" placeholder="SELECT follo..followers..." />
+            <marker date="1555758234737" expanded="true" signature="985:1073" placeholder="SELECT follo..followers..." />
+            <marker date="1555758234737" expanded="true" signature="1226:1274" placeholder="UPDATE users..." />
+            <marker date="1555758234737" expanded="true" signature="1368:1398" placeholder="INSERT INTO followers..." />
+            <marker date="1555758234737" expanded="true" signature="1368:1400" placeholder="INSERT INTO followers..." />
+            <marker date="1555758234737" expanded="true" signature="1368:1413" placeholder="INSERT INTO followers..." />
+            <marker date="1555758234737" expanded="true" signature="1368:1426" placeholder="INSERT INTO followers..." />
+            <marker date="1555758234737" expanded="true" signature="1848:1906" placeholder="SELECT follo..followers..." />
+            <marker date="1555758234737" expanded="true" signature="1848:1936" placeholder="SELECT follo..followers..." />
+            <marker date="1555758234737" expanded="true" signature="1848:2077" placeholder="SELECT follo..followers..." />
+            <marker date="1555758234737" expanded="true" signature="2078:2126" placeholder="UPDATE users..." />
+            <marker date="1555758234737" expanded="true" signature="2216:2292" placeholder="DELETE FROM ..." />
+            <marker date="1555758234737" expanded="true" signature="2227:2238" placeholder="INSERT INTO followers..." />
+            <marker date="1555758234737" expanded="true" signature="2467:2525" placeholder="SELECT follo..followers..." />
+            <marker date="1555758234737" expanded="true" signature="2467:2555" placeholder="SELECT follo..followers..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14609286">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding>
+            <marker date="1555758343464" expanded="true" signature="379:440" placeholder="INSERT INTO posts..." />
+            <marker date="1555758343464" expanded="true" signature="700:777" placeholder="SELECT user_..posts_likes..." />
+            <marker date="1555758343464" expanded="true" signature="864:913" placeholder="UPDATE posts..." />
+            <marker date="1555758343464" expanded="true" signature="973:1027" placeholder="INSERT INTO posts_likes..." />
+            <marker date="1555758343464" expanded="true" signature="1132:1181" placeholder="UPDATE posts..." />
+            <marker date="1555758343464" expanded="true" signature="1241:1311" placeholder="DELETE FROM ..." />
+            <marker date="1555758343464" expanded="true" signature="1524:1584" placeholder="SELECT * FRO..posts..." />
+            <marker date="1555758343464" expanded="true" signature="1708:1785" placeholder="SELECT post_..posts_likes..." />
           </folding>
         </state>
       </provider>

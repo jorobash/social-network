@@ -1,6 +1,7 @@
 <?php
 include('./classes/DB.php');
 include('./classes/Login.php');
+include('./classes/Post.php');
 
 if(Login::isLoggedIn()){
     echo 'Logged In';
@@ -52,40 +53,14 @@ if(isset($_GET['username'])){
             }
 
             if(isset($_POST['post'])){
-                $postbody = htmlspecialchars($_POST['postbody']);
-                $loggedInUser = Login::isLoggedIn();
-
-                if(strlen($postbody > 160 || strlen($postbody) < 1)){
-                    die('Incorect length');
-                }
-
-                if($loggedInUser == $userid){
-                    DB::query('INSERT INTO posts VALUES (\'\', :postbody, NOW(), :userid, 0)', array(':postbody' => $postbody, ':userid' => $userid));
-                }else{
-                    die('Incorecrt user');
-                }
-
+                Post::createPost($_POST['postbody'], $userid, $followerid);
             }
 
         if(isset($_GET['postid'])){
-            if(!DB::query('SELECT user_id FROM posts_likes WHERE post_id = :postid AND user_id = :userid', array(':postid' => $_GET['postid'], ':userid' => $followerid))){
-                DB::query('UPDATE posts SET likes=likes+1 WHERE id = :postid', array(':postid' => $_GET['postid']));
-                DB::query('INSERT INTO posts_likes VALUES(\'\', :postid, :userid)', array(':postid' => $_GET['postid'], ':userid' => $followerid));
-            }else{
-                echo 'YOu alredy like this post';
-            }
-
+         Post::likePost($_GET['postid'], $followerid);
         }
 
-            $db = DB::query('SELECT * FROM posts WHERE user_id = :userid ORDER BY id DESC', array(':userid' => $userid));
-            $posts = '';
-            foreach($db as $post){
-              $posts .= $post['body']."
-              <form action='profile.php?username=$username&postid=". $post['id']."' method='post'>
-                <input type='submit' name='like' value='like'>
-              </form>
-              <hr></br>";
-            }
+        Post::displayPost($userid, $username, $followerid);
     }else{
         die('User not found');
     }

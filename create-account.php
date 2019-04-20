@@ -12,7 +12,7 @@
 					if(strlen($password) >= 4 && strlen($password) <= 60){
 					if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 							DB::query('INSERT INTO users
-						VALUES(\'\',:username,:password,:email)', array(':username' => $username, ':password' => password_hash($password, PASSWORD_BCRYPT), ':email' => $email));
+						VALUES(\'\',:username,:password,:email, \'0\')', array(':username' => $username, ':password' => password_hash($password, PASSWORD_BCRYPT), ':email' => $email));
 							echo 'success';
 					}else{
 						echo 'Invalid email';

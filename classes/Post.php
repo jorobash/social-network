@@ -17,6 +17,27 @@
             }
         }
 
+        //post image
+        public static function createImagePost($postbody,$userid, $loggedInUser ){
+            $postbody = htmlspecialchars($_POST['postbody']);
+
+            if(strlen($postbody > 160)){
+                die('Incorect length');
+            }
+
+            if($loggedInUser == $userid){
+                DB::query('INSERT INTO posts VALUES (\'\', :postbody, NOW(), :userid, 0)', array(':postbody' => $postbody, ':userid' => $userid));
+                $postid = DB::query('SELECT id
+                           FROM posts
+                           WHERE user_id = :userid
+                           ORDER BY id DESC LIMIT 1',
+                    array(':userid' => $loggedInUser))[0]['id'];
+                return $postid;
+            }else{
+                die('Incorecrt user');
+            }
+        }
+
         //like unlike posts
         public static function likePost($postid, $followerid){
             if(!DB::query('SELECT user_id FROM posts_likes WHERE post_id = :postid AND user_id = :userid', array(':postid' => $postid, ':userid' => $followerid))){
@@ -28,7 +49,7 @@
             }
         }
 
-        // show posts 
+        // show posts
         public static function displayPost($userid, $username, $followerid){
             $db = DB::query('SELECT * FROM posts WHERE user_id = :userid ORDER BY id DESC', array(':userid' => $userid));
             $posts = '';
@@ -50,5 +71,8 @@
                 }
 
             }
+
+            return $posts;
         }
+
     }

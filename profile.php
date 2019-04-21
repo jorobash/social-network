@@ -2,6 +2,7 @@
 include('./classes/DB.php');
 include('./classes/Login.php');
 include('./classes/Post.php');
+include('./classes/Image.php');
 
 if(Login::isLoggedIn()){
     echo 'Logged In';
@@ -53,14 +54,22 @@ if(isset($_GET['username'])){
             }
 
             if(isset($_POST['post'])){
-                Post::createPost($_POST['postbody'], $userid, $followerid);
+                if($_FILES['postimg']['size'] == 0){
+                    Post::createPost($_POST['postbody'], $userid, $followerid);
+                }else{
+                  $postid = Post::createImagePost($_POST['postbody'], $userid, $followerid);
+                    Image::upload('postimg',"UPDATE posts
+                                   SET postimg = :postimg
+                                   WHERE id = :postid" , array( ':postid' => $postid));
+                }
+
             }
 
         if(isset($_GET['postid'])){
          Post::likePost($_GET['postid'], $followerid);
         }
 
-        Post::displayPost($userid, $username, $followerid);
+       $posts = Post::displayPost($userid, $username, $followerid);
     }else{
         die('User not found');
     }
@@ -80,11 +89,13 @@ if(isset($_GET['username'])){
     }
     ?>
 </form>
-<form action="profile.php?username=<?php echo $username; ?>" method="post">
+
+<form action="profile.php?username=<?php echo $username; ?>" method="post" enctype="multipart/form-data">
     <textarea name="postbody" id="postbody" cols="30" rows="10"></textarea>
+    <br> Upload an image:
+    <input type="file" name="postimg">
     <input type="submit" name="post" value="Post">
 </form>
-
 <div class="posts">
     <?= $posts; ?>
 </div>

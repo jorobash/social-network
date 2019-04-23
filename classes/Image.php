@@ -4,6 +4,7 @@ class Image {
     public static function upload($formname,$query, $params){
         //    print_r($_FILES);
         $image = base64_encode(file_get_contents($_FILES[$formname]['tmp_name']));
+
         $imageUrl = "https://api.imgur.com/3/image";
 
         $options = array('http' => array(

@@ -21,7 +21,7 @@ if(isset($_POST['uploadprofileimg'])){
     Image::upload('profileimg','UPDATE users
                SET profileimg = :profileimg
                WHERE id = :userid',
-        array( ':userid' => $userid));
+        array( 'userid' => $userid));
 }
 ?>
 

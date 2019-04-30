@@ -10,8 +10,11 @@
                 die('Incorect length');
             }
 
+            $topics = self::getTopics($postbody);
+
             if($loggedInUser == $userid){
-                DB::query('INSERT INTO posts VALUES (\'\', :postbody, NOW(), :userid, 0, \'\')', array(':postbody' => $postbody, ':userid' => $userid));
+                DB::query('INSERT INTO posts VALUES (\'\', :postbody, NOW(), :userid, 0, \'\', :topics)',
+                    array(':postbody' => $postbody, ':userid' => $userid, ':topics' => $topics));
             }else{
                 die('Incorecrt user');
             }
@@ -25,8 +28,11 @@
                 die('Incorect length');
             }
 
+           $topics = self::getTopics($postbody);
+
             if($loggedInUser == $userid){
-                DB::query('INSERT INTO posts VALUES (\'\', :postbody, NOW(), :userid, 0, \'\')', array(':postbody' => $postbody, ':userid' => $userid));
+                DB::query('INSERT INTO posts VALUES (\'\', :postbody, NOW(), :userid, 0, \'\', :topics)',
+                    array(':postbody' => $postbody, ':userid' => $userid, ':topics' => $topics));
                 $postid = DB::query('SELECT id
                            FROM posts
                            WHERE user_id = :userid
@@ -49,6 +55,7 @@
             }
         }
 
+        // find if some is mention
         public static function link_add($text){
 
             $text = explode(" ",$text);
@@ -56,13 +63,28 @@
 
             foreach($text as $word){
                 if(substr($word,0,1) == "@"){
-                    $newString = "<a href='#'>". $word  . "</a>";
+                    $newString = "<a href='profile.php?username=".substr($word, 1) ."'>". htmlspecialchars($word)  . "</a>";
+                }else if(substr($word,0,1) == "#"){
+                    $newString = "<a href='topics.php?topics=".substr($word, 1) ."'>". htmlspecialchars($word)  . "</a>";
                 }else {
-                    $newString .= $word. " ";
+                    $newString .= htmlspecialchars($word). " ";
                 }
             }
-            echo $newString;
-            return implode($text, " ");
+
+            return $newString;
+        }
+
+        public static function getTopics($text){
+            $text = explode(" ",$text);
+            $topics = "";
+
+            foreach($text as $word){
+                if(substr($word,0,1) == "#") {
+                    $topics .= substr($word, 1).",";
+                }
+            }
+
+            return $topics;
         }
 
         // show posts
@@ -71,14 +93,14 @@
             $posts = '';
             foreach($db as $post){
                 if(!DB::query('SELECT post_id FROM posts_likes WHERE post_id = :postid AND user_id = :userid', array(':postid' => $post['id'], ':userid'=>$followerid))){
-                    $posts .= "<img src='". $post['postimg']."' style='width: 140px; height: 140px;'>". htmlspecialchars(self::link_add($post['body']))."
+                    $posts .= "<img src='". $post['postimg']."' style='width: 140px; height: 140px;'>". self::link_add($post['body'])."
                       <form action='profile.php?username=$username&postid=". $post['id']."' method='post'>
                         <input type='submit' name='like' value='like'>
                         <span>". $post['likes'] ." likes</span>
                       </form>
                       <hr></br>";
                 }else{
-                    $posts .= "<img src='". $post['postimg']."' style='width: 140px; height: 140px;'>".htmlspecialchars(self::link_add($post['body']))."
+                    $posts .= "<img src='". $post['postimg']."' style='width: 140px; height: 140px;'>".self::link_add($post['body'])."
                       <form action='profile.php?username=$username&postid=". $post['id']."' method='post'>
                         <input type='submit' name='unlike' value='unlike'>
                          <span>". $post['likes'] ." likes</span>

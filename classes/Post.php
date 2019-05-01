@@ -13,6 +13,21 @@
             $topics = self::getTopics($postbody);
 
             if($loggedInUser == $userid){
+
+                //check if there is any mantions if it is send notifications to the mantioned user
+                if(count(self::notify($postbody)) != 0){
+                    foreach(self::notify($postbody) as $key => $notify){
+                        $sender = $loggedInUser;
+                        $receiver   = DB::query('SELECT id FROM users WHERE username = :username'
+                            ,array(':username' => $key))[0]['id'];
+                       // check if the mentioned user exists
+                       if($receiver != 0){
+                           DB::query('INSERT INTO notifications  values(\'\', :type, :receiver, :sender)',
+                               array(':type' => $notify,':receiver' => $receiver, ':sender' => $sender));
+                       }
+                    }
+                }
+
                 DB::query('INSERT INTO posts VALUES (\'\', :postbody, NOW(), :userid, 0, \'\', :topics)',
                     array(':postbody' => $postbody, ':userid' => $userid, ':topics' => $topics));
             }else{
@@ -53,6 +68,20 @@
                 DB::query('UPDATE posts SET likes=likes-1 WHERE id = :postid', array(':postid' => $postid));
                 DB::query('DELETE FROM  posts_likes WHERE post_id = :postid AND user_id = :userid', array(':postid' => $postid, ':userid' => $followerid));
             }
+        }
+
+        public static function notify($body){
+            $body = explode(" ", $body);
+            $notify = array();
+
+            foreach($body as $note){
+                if(substr($note,0,1) == '@'){
+                    $notify[substr($note,1)] = 1;
+                }
+
+            }
+
+            return $notify;
         }
 
         // find if some is mention
@@ -96,15 +125,21 @@
                     $posts .= "<img src='". $post['postimg']."' style='width: 140px; height: 140px;'>". self::link_add($post['body'])."
                       <form action='profile.php?username=$username&postid=". $post['id']."' method='post'>
                         <input type='submit' name='like' value='like'>
-                        <span>". $post['likes'] ." likes</span>
-                      </form>
+                        <span>". $post['likes'] ." likes</span>";
+                        if($userid == $followerid){
+                            $posts .= "<input type='submit' name='deletepost' value='x'>";
+                        }
+                    $posts .= "</form>
                       <hr></br>";
                 }else{
                     $posts .= "<img src='". $post['postimg']."' style='width: 140px; height: 140px;'>".self::link_add($post['body'])."
                       <form action='profile.php?username=$username&postid=". $post['id']."' method='post'>
                         <input type='submit' name='unlike' value='unlike'>
-                         <span>". $post['likes'] ." likes</span>
-                      </form>
+                         <span>". $post['likes'] ." likes</span>";
+                    if($userid == $followerid){
+                        $posts .= "<input type='submit' name='deletepost' value='x'>";
+                    }
+                    $posts .= "</form>
                       <hr></br>";
                 }
 

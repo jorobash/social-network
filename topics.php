@@ -15,3 +15,8 @@ if(isset($_GET{'topics'})){
         }
     }
 }
+//
+//$_SESSION['book'] = 1;
+//$_POST['post'] = 'post';
+//$_GET['GET'] = 'GET';
+//var_dump($_SERVER['REQUEST_METHOD']);

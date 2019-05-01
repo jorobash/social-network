@@ -22,8 +22,8 @@
                             ,array(':username' => $key))[0]['id'];
                        // check if the mentioned user exists
                        if($receiver != 0){
-                           DB::query('INSERT INTO notifications  values(\'\', :type, :receiver, :sender)',
-                               array(':type' => $notify,':receiver' => $receiver, ':sender' => $sender));
+                           DB::query('INSERT INTO notifications  values(\'\', :type, :receiver, :sender, :extra)',
+                               array(':type' => $notify['type'],':receiver' => $receiver, ':sender' => $sender, ':extra' => $notify['extra']));
                        }
                     }
                 }
@@ -46,6 +46,20 @@
            $topics = self::getTopics($postbody);
 
             if($loggedInUser == $userid){
+
+                if(count(self::notify($postbody)) != 0){
+                    foreach(self::notify($postbody) as $key => $notify){
+                        $sender = $loggedInUser;
+                        $receiver   = DB::query('SELECT id FROM users WHERE username = :username'
+                            ,array(':username' => $key))[0]['id'];
+                        // check if the mentioned user exists
+                        if($receiver != 0){
+                            DB::query('INSERT INTO notifications  values(\'\', :type, :receiver, :sender, :extra)',
+                                array(':type' => $notify['type'],':receiver' => $receiver, ':sender' => $sender, ':extra' => $notify['extra']));
+                        }
+                    }
+                }
+
                 DB::query('INSERT INTO posts VALUES (\'\', :postbody, NOW(), :userid, 0, \'\', :topics)',
                     array(':postbody' => $postbody, ':userid' => $userid, ':topics' => $topics));
                 $postid = DB::query('SELECT id
@@ -76,9 +90,12 @@
 
             foreach($body as $note){
                 if(substr($note,0,1) == '@'){
-                    $notify[substr($note,1)] = 1;
+                    $notify[substr($note,1)] = array(
+                        'type' => 1,
+                        'extra'=> '{"postbody": "'. htmlentities(implode($body, " ")).'"}'
+                    );
                 }
-
+//                var_dump($notify['howcode']['extra']);
             }
 
             return $notify;

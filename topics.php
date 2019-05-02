@@ -11,10 +11,14 @@ if(isset($_GET{'topics'})){
 //            print_r($topic);
 //            echo '</pre>';
 
-            echo $topic['body'];
+//            echo $topic['body'];
         }
     }
 }
+
+//$text = "";
+//$book = explode(" ", $text);
+//echo count(array_filter($book, 'strlen'));
 //
 //$_SESSION['book'] = 1;
 //$_POST['post'] = 'post';

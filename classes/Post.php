@@ -15,8 +15,8 @@
             if($loggedInUser == $userid){
 
                 //check if there is any mantions if it is send notifications to the mantioned user
-                if(count(self::notify($postbody)) != 0){
-                    foreach(self::notify($postbody) as $key => $notify){
+                if(count(Notify::createNotify($postbody)) != 0){
+                    foreach(Notify::createNotify($postbody) as $key => $notify){
                         $sender = $loggedInUser;
                         $receiver   = DB::query('SELECT id FROM users WHERE username = :username'
                             ,array(':username' => $key))[0]['id'];
@@ -47,8 +47,8 @@
 
             if($loggedInUser == $userid){
 
-                if(count(self::notify($postbody)) != 0){
-                    foreach(self::notify($postbody) as $key => $notify){
+                if(count(Notify::createNotify($postbody)) != 0){
+                    foreach(Notify::createNotify($postbody) as $key => $notify){
                         $sender = $loggedInUser;
                         $receiver   = DB::query('SELECT id FROM users WHERE username = :username'
                             ,array(':username' => $key))[0]['id'];
@@ -78,28 +78,13 @@
             if(!DB::query('SELECT user_id FROM posts_likes WHERE post_id = :postid AND user_id = :userid', array(':postid' => $postid, ':userid' => $followerid))){
                 DB::query('UPDATE posts SET likes=likes+1 WHERE id = :postid', array(':postid' => $postid));
                 DB::query('INSERT INTO posts_likes VALUES(\'\', :postid, :userid)', array(':postid' => $postid, ':userid' => $followerid));
+                Notify::createNotify("", $postid, $followerid);
             }else{
                 DB::query('UPDATE posts SET likes=likes-1 WHERE id = :postid', array(':postid' => $postid));
                 DB::query('DELETE FROM  posts_likes WHERE post_id = :postid AND user_id = :userid', array(':postid' => $postid, ':userid' => $followerid));
             }
         }
 
-        public static function notify($body){
-            $body = explode(" ", $body);
-            $notify = array();
-
-            foreach($body as $note){
-                if(substr($note,0,1) == '@'){
-                    $notify[substr($note,1)] = array(
-                        'type' => 1,
-                        'extra'=> '{"postbody": "'. htmlentities(implode($body, " ")).'"}'
-                    );
-                }
-//                var_dump($notify['howcode']['extra']);
-            }
-
-            return $notify;
-        }
 
         // find if some is mention
         public static function link_add($text){

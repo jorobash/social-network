@@ -18,6 +18,9 @@ if($notification = DB::query('SELECT * FROM notifications WHERE receiver = :user
                 $extra = $body->postbody;
             }
             echo "<h3> ".$senderName. " mentioned you in a post -". $extra. "</h3><hr>";
+        }else if($n['type'] == 2){
+            $senderName = DB::query('SELECT username FROM users WHERE id = :senderid',array(':senderid' => $n['sender']))[0]['username'];
+            echo "<h3>" .$senderName .  "liked your post!<hr></h3>";
         }
     }
 }

@@ -35,8 +35,9 @@ if(isset($_POST['searchbox'])){
         $whereclause .= " OR username LIKE :u$i ";
         $paramsarray[":u$i"] = $tosearch[$i];
     }
+//    var_dump('SELECT users.username FROM users WHERE users.username LIKE :username ' . $whereclause .' ', $paramsarray);
    $users = DB::query('SELECT users.username FROM users WHERE users.username LIKE :username ' . $whereclause .' ', $paramsarray);
-
+//    print_r($users);
 
 //    search for postbody
     $whereclause = "";
@@ -44,10 +45,12 @@ if(isset($_POST['searchbox'])){
     $paramsarray = array(":postbody" => '%'. $_POST['searchbox']. '%');
     for($i = 0; $i < count($tosearch); $i++){
         if($i % 2) {
+            echo $i;
             $whereclause .= " OR body LIKE :p$i ";
             $paramsarray[":p$i"] = $tosearch[$i];
         }
     }
+//    var_dump('SELECT posts.body FROM posts WHERE posts.body LIKE :postbody ' . $whereclause .' ', $paramsarray);
    $posts = DB::query('SELECT posts.body FROM posts WHERE posts.body LIKE :postbody ' . $whereclause .' ', $paramsarray);
 }
 
